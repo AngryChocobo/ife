@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    align-items: stretch;
+    width: 960px;
+    margin: auto;
+}
+h1 {
+    min-width: 2em;
+    padding: 1em;
+    color: white;
+    background: #74a6f4;
+}
+
+body > div {
+    padding: 1em;
+}
+
+.key {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.key:not(:first-child) {
+    margin-left: 8px;
+}
+
+.key:not(:nth-child(n+1)) {
+    margin-left: 8px;
+}
