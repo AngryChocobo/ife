@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .layout {
+            background: black;
+            width: 100%;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .left {
+            background: red;
+        }
+
+        .middle {
+            background: green;
+        }
+
+        .right {
+            background: blue;
+        }
+
+
+        /* float方式   实现一个两栏布局，左侧占30%宽度，右侧占70%宽度 */
+        /* .layout1 .left {
+            height: 100%;
+            float: left;
+            width: 30%;
+        }
+
+        .layout1 .right {
+            float: left;
+            height: 100%;
+            width: 70%;
+        } */
+
+        /* position方式   实现一个两栏布局，左侧占30%宽度，右侧占70%宽度 */
+        /* .layout1 {
+            position: relative;
+        }
+        .layout1 .left {
+            position: absolute;
+            width: 30%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .layout1 .right {
+            position: absolute;
+            left: 30%;
+            top: 0;
+            width: 70%;
+            height: 100%;
+        } */
+
+        /* flex方式   实现一个两栏布局，左侧占30%宽度，右侧占70%宽度 */
+        .layout1 {
+            display: flex;
+        }
+
+        .layout1 .left {
+            width: 30%;
+        }
+
+        .layout1 .right {
+            width: 70%;
+        }
+    </style>
+    <style>
+        /* 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化 */
+        /* float */
+        /* .layout2 .left {
+            float: left;
+            width: 200px;
+            height: 100%;
+        }
+
+        .layout2 .right {
+            float: left;
+            width: calc(100% - 200px);
+            height: 100%;
+        } */
+
+        /* position */
+        /* .layout2 {
+            position: relative;
+        }
+
+        .layout2 .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+        }
+
+        .layout2 .right {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            width: calc(100% - 200px);
+            height: 100%;
+        } */
+
+        /* flex */
+        .layout2 {
+            display: flex;
+
+        }
+
+        .layout2 .left {
+            width: 200px;
+        }
+
+        .layout2 .right {
+            flex-grow: 1;
+        }
+    </style>
+    <style>
+        /* 实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化 */
+        /* float */
+        /* .layout3 .left {
+            float: left;
+            width: calc(100% - 200px);
+            height: 100%;
+
+        }
+        .layout3 .right {
+            float: right;
+            width: 200px;
+            height: 100%;
+        } */
+
+        /* position */
+        /* .layout3 {
+            position: relative;
+        }
+
+        .layout3 .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% - 200px);
+            height: 100%;
+        }
+
+        .layout3 .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+        } */
+
+        /* flex */
+        .layout3 {
+            display: flex;
+        }
+
+        .layout3 .left {
+            flex-grow: 1;
+        }
+
+        .layout3 .right {
+            width: 200px;
+        }
+    </style>
+    <style>
+        /* 实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化 */
+        /* float */
+        /* .layout4 .left, .layout4 .middle{
+            float: left;
+            width: 200px;
+            height: 100%;
+        }
+
+        .layout4 .right {
+            float: left;
+            width: calc(100% - 400px);
+            height: 100%;
+        } */
+
+        /* position */
+        /* .layout4 {
+            position: relative;
+        }
+
+        .layout4 .left, .layout4 .middle, .layout4 .right {
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+
+        .layout4 .left {
+            left: 0;
+            width: 200px;
+        }
+
+        .layout4 .middle {
+            left: 200px;
+            width: 200px;
+        }
+
+        .layout4 .right {
+            right: 0;
+            width: calc(100% - 400px);
+        } */
+
+        /* flex */
+        .layout4 {
+            display: flex;
+        }
+
+        .layout4 .left, .layout4 .middle {
+            width: 200px;   
+        }
+
+        .layout4 .right {
+            flex-grow: 1;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度</legend>
+        <div class="layout1 layout">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</legend>
+        <div class="layout2 layout">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</legend>
+        <div class="layout3 layout">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</legend>
+        <div class="layout4 layout">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化</legend>
+        <div class="layout5 layout">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+        </div>
+    </fieldset>
+</body>
+
+</html>
