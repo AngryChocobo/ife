@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+}
+
+header {
+    background: black;
+}
+
+header > div {
+    width: 960px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+header > div h1 {
+    font-size: 20px;
+    color: #fff;
+}
+
+header > div a {
+    color: #fff;
+}
+
+.carousel {
+    height: 300px;
+    background-color: #7bb74a;
+    margin-bottom: 20px;
+}
+
+.carousel > div {
+    width: 960px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.carousel .indicators {
+    position: absolute;
+    display: inline-flex;
+    bottom: 20px;
+    right: 20px;
+    list-style: none;
+    padding: 0;
+    align-items: flex-end;
+}
+
+.carousel .indicators li {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: rgba(233, 233, 233, 0.5);
+    width: 20px;
+    height: 30px;
+    margin: 0 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.carousel .indicators li.active {
+    height: 40px;
+    background-color: rgba(233, 233, 233, 0.8);
+} 
+
+nav {
+    border-bottom: 1px solid gray;
+}
+
+nav div, main {
+    width: 960px;
+    margin: auto;
+}
+
+nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+nav ol::before {
+    display: table;
+    content: " ";
+}
+
+nav li {
+    /* border-top-left-radius: 20px; */
+    display: inline-block;
+    border-radius: 20px 20px 0 0 ;
+    width: 100px;
+    background: #eee;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 16px;
+    font-size: 16px;
+    margin-bottom: -2px;
+    box-sizing: border-box;
+}
+
+nav li.active {
+    background: #fff;
+    border-bottom: transparent;
+}
+
+main {
+    margin: 10px auto;
+}
+
+main > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+main > div > div {
+    padding: 80px;
+    margin: 10px;
+    border: 1px solid gray;
+}
